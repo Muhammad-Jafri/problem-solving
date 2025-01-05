@@ -4,21 +4,21 @@ from collections import Counter
 class Solution:
     def countPalindromicSubsequence(self, s: str) -> int:
 
-        res = set() # (middle, outer)
-        left = set() # Keep track of the things we have seen
-        right_hashmap = Counter(s) # Keep track of things on the right
+        res = set()  # (MID, OUTER)
+        left = set()  # Keep track of the elements to the left
+        right = Counter(s)  # Keep track of elements to the right
 
         for m in range(len(s)):
 
-            right_hashmap[s[m]] -= 1 
-            if right_hashmap[s[m]] == 0:
-                right_hashmap.pop(s[m]) # Ensures we are not counting the middle twice
+            right[s[m]] -= 1
+            if right[s[m]] == 0:
+                right.pop(s[m])
 
             for c in range(26):
 
                 character = chr(ord("a") + c)
 
-                if character in left and character in right_hashmap:
+                if character in left and character in right:
 
                     res.add((s[m], character))
 
@@ -28,5 +28,5 @@ class Solution:
 
 
 sol = Solution()
-s = "adc"
+s = "aabca"
 print(sol.countPalindromicSubsequence(s=s))
