@@ -1,32 +1,35 @@
 from typing import List
 
-
 class Solution:
-    def coinChange(
-        self, coins: List[int], amount: int
-    ) -> int:  # Let's do this with recursion, commit this and then solve using dp
-
-        res = []
-
-        def backtrack(coins, cur_coin, no_coins, target):
-
+    def coinChange(self, coins: List[int], amount: int) -> int:
+        # Create cache dictionary
+        cache = {}
+        
+        def backtrack(target):
+            # Base cases
             if target == 0:
-                res.append(no_coins)
-                return
-
+                return 0
             if target < 0:
-                return
+                return float('inf')
+            # Check cache
+            if target in cache:
+                return cache[target]
+            
+            # Try each coin and get minimum
+            min_coins = float('inf')
+            for coin in coins:
+                result = backtrack(target - coin)
+                if result != float('inf'):
+                    min_coins = min(min_coins, result + 1)
+            
+            # Store in cache and return
+            cache[target] = min_coins
+            return min_coins
+        
+        result = backtrack(amount)
+        return result if result != float('inf') else -1
 
-            for c in coins:
-                backtrack(coins, c, no_coins + 1, target - c)
-
-        for coin in coins:
-
-            backtrack(coins=coins, cur_coin=coin, no_coins=0, target=amount)
-
-        return min(res) if res != [] else -1
-
-
+# Test
 coins = [2]
 amount = 3
 print(Solution().coinChange(coins=coins, amount=amount))
