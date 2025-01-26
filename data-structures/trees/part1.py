@@ -86,30 +86,33 @@ class Tree(object):
         self.root = recursive_insert(self.root, val)
 
     def get_node(self, key):
-        return None
+
+        ptr = Tree.get_key_node(self.root, key)
+        return ptr if ptr is not None else False
 
     def find_node(self, key):
 
         return key in self.in_order()
 
+    @staticmethod
+    def get_key_node(node, key):
+
+        if node is None:
+            return
+
+        if node.value == key:
+            return node
+
+        if key > node.value:
+            return Tree.get_key_node(node.right, key)
+
+        if key < node.value:
+            return Tree.get_key_node(node.left, key)
+
     def get_children(self, key):  # TODO error handling,
 
-        def get_key_node(node):
-
-            if node.value == key:
-                return node
-
-            if key > node.value:
-                get_key_node(node.right)
-
-            if key < node.value:
-                get_key_node(node.left)
-
-        desired_node = get_key_node(self.root)
-        return [
-            desired_node.left.value if desired_node.left is not None else None,
-            desired_node.right.value if desired_node.right is not None else None,
-        ]
+        desired_node = Tree.get_key_node(self.root, key)
+        return [desired_node.left, desired_node.right]
 
     def update_node(self, key, val):
         return None
@@ -138,7 +141,23 @@ class Tree(object):
         return height - 1
 
     def get_path(self, key):
-        return None
+
+        def wrapper(node, cur_path=[]):
+
+            if node.value == key:
+                cur_path += [node.value]
+                return cur_path
+
+            if node.value < key:
+
+                return wrapper(node.right, cur_path + [node.value])
+
+            else:
+                return wrapper(node.left, cur_path + [node.value])
+
+        res = wrapper(self.root, [])
+        print(res)
+        return res
 
     def avg_diff(self):
 
@@ -153,7 +172,34 @@ class Tree(object):
         return None
 
     def delete_leaf(self, key):
-        return None
+        # Find the node and its parent
+        parent = None
+        current = self.root
+
+        while current and current.value != key:
+            parent = current
+            if key < current.value:
+                current = current.left
+            else:
+                current = current.right
+
+        # If node not found
+        if not current:
+            return
+
+        # If node is not a leaf, can't delete
+        if current.left or current.right:
+            return
+
+        # If parent exists, remove reference to the leaf
+        if parent:
+            if parent.left == current:
+                parent.left = None
+            else:
+                parent.right = None
+        else:
+            # If deleting root and it's a leaf
+            self.root = None
 
     def delete_leaves(self):
         return False
@@ -198,8 +244,8 @@ def main():
     test_BST.root.left.right = Node(5.5)
     test_BST.root.right.left = Node(6.5)
     test_BST.root.right.right = Node(8)
+    test_BST.get_path(4)
     test_BST.print_tree()
-    print(test_BST.get_children(6))
 
 
 # Comment out the line below before running your test files.
