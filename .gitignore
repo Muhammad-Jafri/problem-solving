@@ -170,3 +170,5 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 ruff.toml
+books/Michael T. Goodrich, Roberto Tamassia, Michael H. Goldwasser - Data Structures and Algorithms in Python-Wiley _2013_.pdf
+books/Michael T. Goodrich, Roberto Tamassia, Michael H. Goldwasser - Data Structures and Algorithms in Python-Wiley _2013_.pdf:Zone.Identifier

@@ -115,7 +115,13 @@ class Tree(object):
         return [desired_node.left, desired_node.right]
 
     def update_node(self, key, val):
-        return None
+
+        desired_node = Tree.get_key_node(self.root, key)
+        if desired_node.left.value < key and desired_node.right.value > key:
+            desired_node.value = val
+            return
+
+        return False
 
     def get_height(
         self,
