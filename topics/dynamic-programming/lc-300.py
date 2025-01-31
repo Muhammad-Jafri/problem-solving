@@ -29,5 +29,5 @@ class Solution:
         return res
 
 
-n = [1, 2, 3]
+n =  [10, 20, 35, 80]
 print(Solution().lengthOfLIS(nums=n))

@@ -49,7 +49,7 @@ def test(lines, queries, score):
 
 
 if __name__ == '__main__':
-    with open("testwords.txt") as file:
+    with open("/home/enigma/problem-solving/data-structures/hashmaps/testwords.txt") as file: # Inefficient af
         lines = file.readlines()
         lines = [line.rstrip() for line in lines]
     print("Total number of words being inserted: ", len(lines))

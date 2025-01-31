@@ -63,10 +63,10 @@ def test(allWords, queries, score):
     
 if __name__ == '__main__':
     allWords = []
-    with open("words.txt") as file:
+    with open("/home/enigma/problem-solving/data-structures/hashmaps/words.txt") as file:
         allWords = [line.rstrip() for line in file]
     file.close()
-    print("Total number of words being inserted:", allWords)
+    print("Total number of words being inserted:", len(allWords))
     queries = []
     for word in allWords:
         x = random.randint(0, 5)
