@@ -12,9 +12,7 @@ class Solution:
 
         for i in range(n - 1):
 
-            if (nums[i] % 2 == 0 and nums[i + 1] % 2 == 0) or (
-                nums[i] % 2 == 1 and nums[i + 1] % 2 == 1
-            ):
+            if nums[i] % 2 == nums[i + 1] % 2:
 
                 is_special = False
                 break
@@ -22,5 +20,5 @@ class Solution:
         return is_special
 
 
-nums = [4,3,1,6]
+nums = [4, 3, 2, 11]
 print(Solution().isArraySpecial(nums=nums))
