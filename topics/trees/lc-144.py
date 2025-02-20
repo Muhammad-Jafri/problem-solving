@@ -16,7 +16,6 @@ class Solution:
         res = []
 
         def wrapper(root):
-
             if root is None:
                 return
 

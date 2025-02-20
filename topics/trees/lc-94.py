@@ -11,11 +11,9 @@ class TreeNode:
 
 class Solution:
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-
         res = []
 
         def wrapper(root):
-
             if (
                 root is None
             ):  # Base case itself is wrong bro, the limit would be when you encounter a None node not a leaf node.

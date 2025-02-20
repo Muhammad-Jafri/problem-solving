@@ -1,9 +1,7 @@
 def is_repeating(s: str):
-
     sub = ""
 
     for c in s:  # Getting the repeating bit
-
         if c in sub:
             break
         else:
@@ -14,7 +12,6 @@ def is_repeating(s: str):
         return False
     ptr = 0
     for c in s:
-
         if ptr >= len(sub):
             ptr = 0
 

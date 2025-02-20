@@ -1,8 +1,7 @@
 class Solution:
     def isHappy(self, n: int) -> bool:
-
         def sum_of_squares(nums: list):
-            squared_list = map(lambda x: x ** 2, nums)
+            squared_list = map(lambda x: x**2, nums)
             return sum(squared_list)
 
         def convert_num_to_digits(n: int) -> list[int]:
@@ -12,7 +11,6 @@ class Solution:
         hashmap[n] = 1
 
         while True:
-
             computed_num = sum_of_squares(convert_num_to_digits(n))
 
             if computed_num == 1:

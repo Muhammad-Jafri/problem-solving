@@ -2,7 +2,9 @@ from collections import defaultdict
 
 
 class Solution:
-    def wordPattern(self, pattern: str, s: str) -> bool: #TODO the solution is not OPTIMAL
+    def wordPattern(
+        self, pattern: str, s: str
+    ) -> bool:  # TODO the solution is not OPTIMAL
         hashmap_p = defaultdict(int)
         hashmap_str = defaultdict(int)
 

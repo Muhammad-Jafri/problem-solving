@@ -3,15 +3,13 @@ from typing import List
 
 class Solution:
     def tupleSameProduct(self, nums: List[int]) -> int:
-
         res = []
 
         def backtrack(cur_list, modified_nums):
-
             if len(cur_list) == 4:
                 res.append(cur_list)
                 return
-            
+
             for n in modified_nums:
                 backtrack(cur_list + [n], [i for i in modified_nums if i != n])
 
@@ -40,5 +38,5 @@ class Solution:
         # return result * 8
 
 
-nums = [2,3,4,6]
+nums = [2, 3, 4, 6]
 print(Solution().tupleSameProduct(nums=nums))

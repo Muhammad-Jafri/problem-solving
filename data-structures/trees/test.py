@@ -209,7 +209,6 @@ def test_part1():
     flag_two = False
 
     try:
-
         test_tree_copy = test_BST
         test_tree_copy.update_node(6, 6.1)
 
@@ -249,7 +248,6 @@ def test_part1():
     flag_five = False
 
     try:
-
         if test_BST.get_height() == 3:
             flag_one = True
             print("Get Height Test Passed")
@@ -283,7 +281,6 @@ def test_part1():
     flag_six = False
 
     try:
-
         if test_BST.get_path(7) == [6, 7]:
             flag_one = True
         if test_BST.get_path(6) == [6]:
@@ -334,7 +331,6 @@ def test_part1():
     flag_five = False
 
     try:
-
         if (test_BST.avg_diff() > 2.3) and (test_BST.avg_diff() < 2.4):
             print("Avg Diff Test Passed")
             score += 4
@@ -366,7 +362,6 @@ def test_part1():
     test_tree_copy = test_BST
 
     try:
-
         test_tree_copy.delete(4)
         test_tree_copy.delete(5)
         test_tree_copy.delete(5.5)
@@ -472,7 +467,6 @@ def test_part1():
     test_BST.root.right.right = part1.Node(8)
 
     try:
-
         if test_BST.in_order() == [4, 5, 5.5, 6, 6.5, 7, 8]:
             print("In-Order Test Passed")
             score += 0.5
@@ -500,7 +494,6 @@ def test_part1():
     test_BST.root.right.right = part1.Node(8)
 
     try:
-
         if test_BST.pre_order() == [6, 5, 4, 5.5, 7, 6.5, 8]:
             print("Pre-Order Test Passed")
             score += 0.5
@@ -520,7 +513,6 @@ def test_part1():
     ######## TESTING POST-ORDER ########
 
     try:
-
         if test_BST.post_order() == [4, 5.5, 5, 6.5, 8, 7, 6]:
             print("Post-Order Test Passed")
             score += 0.5
@@ -733,7 +725,6 @@ def part2():
     print("Test Get height function : ")
     print("")
     try:
-
         if TestTree.get_height(None) == 0:
             print("Get Height Test Case 1 Passed!")
             score += 1

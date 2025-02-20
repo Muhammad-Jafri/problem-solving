@@ -2,20 +2,16 @@ from typing import List
 
 
 class Solution:
-    def longestMonotonicSubarray(self, nums: List[int]) -> int: # Need to revisit
-
+    def longestMonotonicSubarray(self, nums: List[int]) -> int:  # Need to revisit
         i = 0
         max_seq = 0
 
         while i < len(nums) - 1:
-
             if nums[i + 1] > nums[i]:  # Entry point
-
                 j = i + 1
                 k = i
 
                 while nums[j] > nums[k]:
-
                     k += 1
                     j += 1
 
@@ -28,6 +24,6 @@ class Solution:
         return max_seq
 
 
-nums = [ 0, 2, 4, 3]
+nums = [0, 2, 4, 3]
 
 print(Solution().longestMonotonicSubarray(nums))

@@ -2,7 +2,9 @@ from typing import List
 from functools import lru_cache
 
 
-def number_of_ways(n: int, steps: List[int]): # Instead of caching the original results, cache remaining distance instead.
+def number_of_ways(
+    n: int, steps: List[int]
+):  # Instead of caching the original results, cache remaining distance instead.
     # Using lru_cache for automatic memoization
     @lru_cache(None)
     def backtrack(remaining_distance: int) -> int:

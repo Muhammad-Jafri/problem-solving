@@ -2,8 +2,9 @@ from collections import Counter
 
 
 class Solution:
-    def canConstruct(self, s: str, k: int) -> bool: # Now understand this solution you fathead
-
+    def canConstruct(
+        self, s: str, k: int
+    ) -> bool:  # Now understand this solution you fathead
         if k > len(s):
             return False
 
@@ -11,7 +12,6 @@ class Solution:
         odd = 0
 
         for cnt in count.values():
-
             if cnt % 2 == 1:
                 odd += 1
 

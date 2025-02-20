@@ -1,6 +1,7 @@
 from typing import List
 from collections import Counter, defaultdict
 
+
 class Solution:
     def wordSubsets(self, words1: List[str], words2: List[str]) -> List[str]:
         def is_subset(word_dict: dict, required_counts: dict) -> bool:
@@ -25,6 +26,7 @@ class Solution:
                 result.append(word)
 
         return result
+
 
 # Test
 words1 = ["amazon", "apple", "facebook", "google", "leetcode"]

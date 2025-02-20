@@ -2,8 +2,9 @@ from typing import List
 
 
 class Solution:
-    def lengthOfLIS(self, nums: List[int]) -> int: # Works but shitty performance, could do better with dp (not the one you are thinking of)
-
+    def lengthOfLIS(
+        self, nums: List[int]
+    ) -> int:  # Works but shitty performance, could do better with dp (not the one you are thinking of)
         res = 0
 
         def check_if_increasing(arr):
@@ -29,5 +30,5 @@ class Solution:
         return res
 
 
-n =  [10, 20, 35, 80]
+n = [10, 20, 35, 80]
 print(Solution().lengthOfLIS(nums=n))

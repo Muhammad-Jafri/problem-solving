@@ -31,7 +31,6 @@ def div_compression(hash_code, table_size):
 
 
 if __name__ == "__main__":
-
     a = get_hashcode("what is your name")
     b = get_hashcode("fatimajafri")
     c = get_hashcode("muhammad jafri")

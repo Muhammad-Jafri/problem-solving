@@ -3,9 +3,7 @@ import heapq
 
 
 class Solution:
-
     def minCost(self, colors: str, neededTime: List[int]) -> int:
-
         # Find indices range for same chars, create a min heap and take (n - 1) elements
         res = 0
 
@@ -30,12 +28,10 @@ class Solution:
         ranges = find_repeating_ranges(colors)
 
         for start, end in ranges:
-
             heap = neededTime[start : end + 1]
             heapq.heapify(heap)
 
             for i in range(len(heap) - 1):
-
                 res += heapq.heappop(heap)
 
         return res

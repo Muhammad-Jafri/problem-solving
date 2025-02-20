@@ -1,9 +1,9 @@
 from typing import List
 from math import ceil, sqrt
 
+
 class Solution:
     def numSquares(self, n: int) -> int:
-
         def coinChange(coins: List[int], amount: int) -> int:
             # Create cache dictionary
             cache = {}
@@ -31,11 +31,11 @@ class Solution:
 
             result = backtrack(amount)
             return result if result != float("inf") else -1
-        
-        squared_list = [i ** 2 for i in range(1, ceil(sqrt(n)) + 1)]
+
+        squared_list = [i**2 for i in range(1, ceil(sqrt(n)) + 1)]
         print(squared_list)
         return coinChange(squared_list, n)
 
 
 n = 4
-print(Solution().numSquares(n = n))
+print(Solution().numSquares(n=n))

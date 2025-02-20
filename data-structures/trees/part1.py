@@ -10,19 +10,16 @@ class Node(object):
 
 
 class Tree(object):
-
     def __init__(self):  # Initializing the BST. Root points to None.
         self.root = None
 
     def in_order(self, cur_node=None):
-
         res = []
 
         if cur_node is None:
             cur_node = self.root
 
         def wrapper(cur_node):
-
             if cur_node is None:
                 return
 
@@ -37,7 +34,6 @@ class Tree(object):
         res = []
 
         def wrapper(cur_node):
-
             if cur_node is None:
                 return
 
@@ -49,11 +45,9 @@ class Tree(object):
         return res
 
     def post_order(self):
-
         res = []
 
         def wrapper(cur_node):
-
             if cur_node is None:
                 return
 
@@ -86,17 +80,14 @@ class Tree(object):
         self.root = recursive_insert(self.root, val)
 
     def get_node(self, key):
-
         ptr = Tree.get_key_node(self.root, key)
         return ptr if ptr is not None else False
 
     def find_node(self, key):
-
         return key in self.in_order()
 
     @staticmethod
     def get_key_node(node, key):
-
         if node is None:
             return
 
@@ -110,12 +101,10 @@ class Tree(object):
             return Tree.get_key_node(node.left, key)
 
     def get_children(self, key):  # TODO error handling,
-
         desired_node = Tree.get_key_node(self.root, key)
         return [desired_node.left, desired_node.right]
 
     def update_node(self, key, val):
-
         desired_node = Tree.get_key_node(self.root, key)
         if desired_node.left.value < key and desired_node.right.value > key:
             desired_node.value = val
@@ -126,7 +115,6 @@ class Tree(object):
     def get_height(
         self,
     ):  # Height of tree with just root node is 1, figure out why tf are we doing height - 1 TODO
-
         # Do a level order traversal and increment height by 1
         cur_node = self.root
         height = 0
@@ -134,7 +122,6 @@ class Tree(object):
         queue.append(cur_node)
 
         while queue:
-
             n = len(queue)
             for i in range(n):
                 popped_node = queue.pop()
@@ -147,15 +134,12 @@ class Tree(object):
         return height - 1
 
     def get_path(self, key):
-
         def wrapper(node, cur_path=[]):
-
             if node.value == key:
                 cur_path += [node.value]
                 return cur_path
 
             if node.value < key:
-
                 return wrapper(node.right, cur_path + [node.value])
 
             else:
@@ -166,7 +150,6 @@ class Tree(object):
         return res
 
     def avg_diff(self):
-
         left_subtree_values = self.in_order(self.root.left)
         right_subtree_values = self.in_order(self.root.right)
 

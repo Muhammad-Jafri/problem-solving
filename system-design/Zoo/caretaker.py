@@ -10,6 +10,6 @@ class Caretaker:
         feeding_print_statement = f"{self.name} is feeding the animals in {self.enclosure.name} that houses the following animals: \n"
         for animal in self.enclosure.animals:
             feeding_print_statement += f"\n{animal.name}"
-        
+
         feeding_print_statement += "\n"
         print(feeding_print_statement)

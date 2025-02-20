@@ -1,5 +1,7 @@
 from collections import deque
 from typing import Optional, List
+
+
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
@@ -8,13 +10,11 @@ from typing import Optional, List
 #         self.right = right
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
-
         res = []
         queue = deque()
         queue.append(root)
 
         while queue:
-
             lvl_vals = []
             no_objs = len(queue)
             for i in range(no_objs):

@@ -9,7 +9,6 @@ class Solution:
         adj_list = defaultdict(list)
 
         for start, end in edges:  #
-
             adj_list[start].append(end)
             adj_list[end].append(start)
 
@@ -19,8 +18,7 @@ class Solution:
 
         def get_cycle(node: int):
             pass
-            
 
-            
+
 edges = [[1, 2], [2, 3], [3, 4], [1, 4], [1, 5]]
 print(Solution().findRedundantConnection(edges))

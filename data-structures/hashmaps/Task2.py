@@ -28,7 +28,7 @@ class LinearProbing(TableItem):
         """
         self.count = 0
         self.table_size = table_size
-        self.resize_factor = 0.5 # The table should be half full at max
+        self.resize_factor = 0.5  # The table should be half full at max
         self.hash_table = [None for i in range(self.table_size)]
 
     def get_hash(self, value):

@@ -3,12 +3,10 @@ from typing import List
 
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
-
         res = []
         n = len(nums)
 
         def backtrack(idx, cur):
-
             if idx >= n:
                 res.append(cur)
                 return

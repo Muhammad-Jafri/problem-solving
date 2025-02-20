@@ -2,8 +2,9 @@ from typing import List
 
 
 class Solution:
-    def findMaxFish(self, grid: List[List[int]]) -> int: # This mfker testing my patience
-
+    def findMaxFish(
+        self, grid: List[List[int]]
+    ) -> int:  # This mfker testing my patience
         res = 0
         no_rows = len(grid)
         no_cols = len(grid[0])
@@ -28,9 +29,7 @@ class Solution:
 
         for i in range(no_rows):
             for j in range(no_cols):
-
                 if grid[i][j] != 0:
-
                     booyah = backtrack(i, j, 0)
                     print(f"score from row {i} col {j} = {booyah}")
                     res = max(res, booyah)

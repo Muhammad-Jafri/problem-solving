@@ -12,7 +12,6 @@ class TreeNode:
 
 class Solution:
     def zigzagLevelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
-
         if root is None:
             return []
 
@@ -21,7 +20,6 @@ class Solution:
         queue.append(root)
 
         while queue:
-
             lvl_vals = []
             no_objs = len(queue)
             for i in range(no_objs):
@@ -35,7 +33,6 @@ class Solution:
             res.append(lvl_vals)
 
         for i in range(len(res)):
-
             if i % 2 == 1:
                 # Reverse the sublist
                 res[i] = list(reversed(res[i]))

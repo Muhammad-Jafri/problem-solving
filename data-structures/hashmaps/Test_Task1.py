@@ -13,7 +13,7 @@ def test(lines, queries, score):
         mytable.insert_word(i)
 
     if mytable.hash_table != None:
-        print(f'Insertion Passed!')
+        print(f"Insertion Passed!")
         score.value += 5
     else:
         print("Insertion failed")
@@ -44,12 +44,14 @@ def test(lines, queries, score):
         score.value += 15
         print("Delete passed!")
     end_time = time.time()
-    tot_time = end_time-start_time
+    tot_time = end_time - start_time
     print("Total time taken : ", tot_time, " seconds")
 
 
-if __name__ == '__main__':
-    with open("/home/enigma/problem-solving/data-structures/hashmaps/testwords.txt") as file: # Inefficient af
+if __name__ == "__main__":
+    with open(
+        "/home/enigma/problem-solving/data-structures/hashmaps/testwords.txt"
+    ) as file:  # Inefficient af
         lines = file.readlines()
         lines = [line.rstrip() for line in lines]
     print("Total number of words being inserted: ", len(lines))
@@ -58,12 +60,11 @@ if __name__ == '__main__':
         x = random.randint(0, sys.maxsize) % 5
         if x < 2:
             queries.append(i)
-    score = Value('d', 0.0)
-    p1 = Process(target=test, args=(
-        lines, queries, score), name='test_chaining')
+    score = Value("d", 0.0)
+    p1 = Process(target=test, args=(lines, queries, score), name="test_chaining")
     p1.start()
     p1.join(timeout=17)
     p1.terminate()
     if p1.exitcode is None:
-        print(f'Oops, {p1} timed out!')
+        print(f"Oops, {p1} timed out!")
     print("your score is: ", score.value)

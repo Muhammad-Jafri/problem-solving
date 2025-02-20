@@ -3,12 +3,10 @@ from collections import defaultdict
 
 class Solution:
     def tribonacci(self, n: int) -> int:
-
         has_cache = defaultdict(bool)
         cache_val = defaultdict(int)
 
         def recursive_sol(n):
-
             if n == 0:
                 return 0
             if n == 1 or n == 2:
