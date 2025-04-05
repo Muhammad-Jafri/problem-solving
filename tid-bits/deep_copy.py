@@ -10,7 +10,7 @@ def shallow_copy(obj):
 
 
 arr = [[1], [2], [3]]
-arr_copy = deep_copy(arr)
+arr_copy = shallow_copy(arr)
 # Print the address of the array
 print(id(arr))
 print(id(arr_copy))

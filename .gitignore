@@ -172,3 +172,16 @@ cython_debug/
 ruff.toml
 books/Michael T. Goodrich, Roberto Tamassia, Michael H. Goldwasser - Data Structures and Algorithms in Python-Wiley _2013_.pdf
 books/Michael T. Goodrich, Roberto Tamassia, Michael H. Goldwasser - Data Structures and Algorithms in Python-Wiley _2013_.pdf:Zone.Identifier
+network-centric-programming/PA1/client_client1
+network-centric-programming/PA1/client.py
+network-centric-programming/PA1/PA1.pdf
+network-centric-programming/PA1/sample_output.txt
+network-centric-programming/PA1/server_out
+network-centric-programming/PA1/server.py
+network-centric-programming/PA1/TestChatApp.py
+network-centric-programming/PA1/util.py
+network-centric-programming/PA1/Tests/BasicTest.py
+network-centric-programming/PA1/Tests/ErrorHandlingTest.py
+network-centric-programming/PA1/Tests/FileSharingTest.py
+network-centric-programming/PA1/Tests/MultipleClientsTest.py
+network-centric-programming/PA1/Tests/SingleClientTest.py

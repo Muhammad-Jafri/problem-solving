@@ -1,6 +1,6 @@
 # Assignment 2-Part 1
 # BST
-
+from typing import List
 
 class Node(object):
     def __init__(self, value):
@@ -100,7 +100,7 @@ class Tree(object):
         if key < node.value:
             return Tree.get_key_node(node.left, key)
 
-    def get_children(self, key):  # TODO error handling,
+    def get_children(self, key) -> List:  # TODO error handling,
         desired_node = Tree.get_key_node(self.root, key)
         return [desired_node.left, desired_node.right]
 

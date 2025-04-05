@@ -29,7 +29,7 @@ class User:
         self.id = str(uuid.uuid4())
         self.max_books = max_books  # Max books a user can borrow
 
-    def borrow_book(self, book):
+    def borrow_book(self, book) -> str:
         if len(self.borrowed_books) >= self.max_books:  # Check limit first
             return f"You can't borrow more than {self.max_books} books."
 
