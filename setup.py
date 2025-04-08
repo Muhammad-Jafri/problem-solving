@@ -5,9 +5,9 @@ setup(
     version="0.1.0",
     packages=find_packages(),
     install_requires=["pydantic"],
-    author="Your Name",
-    author_email="your.email@example.com",
-    description="A package for solving various problems",
+    author="Syed Muhammad Jafri",
+    author_email="muhammadjafri456@gmail.com",
+    description="A package that contains data structures, algorithms and system design implementation",
     keywords="problem, solving, ai",
     url="https://github.com/yourusername/problem-solving",
     classifiers=[
